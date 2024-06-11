@@ -3,7 +3,6 @@ from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph
 from reportlab.lib.styles import ParagraphStyle
 from datetime import date
-
 class SalesInvoice():
     def __init__(self,company,
                  email,phone,
