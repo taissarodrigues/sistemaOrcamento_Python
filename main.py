@@ -47,6 +47,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.addProduct.clicked.connect(self.add_product)
         self.printSaveInvoice.clicked.connect(self.showMenu)
         self.newInvoice.clicked.connect(self.new_nvoice)
+        self.addProduct.setFixedWidth(150)  # Define a largura do botão
 
         self.showMaximized()
 
@@ -75,6 +76,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 int(e.replace(",", ""))
             k = '{:,}'.format(k)
             self.total.setText(k)
+
+            self.quantity.clear()
+            self.price.clear()
+
 
     def showMenu(self):
 
