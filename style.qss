@@ -11,7 +11,7 @@
     color: #7B68EE;
 }
 
-#companyName,#email,#phone,#companyAddress,#address_client,#quantity,#price,#client,#address_client,#total,#discount,#payment,#rest {
+#companyName,#email,#phone,#companyAddress,#companyCNPJ,#address_client,#quantity,#price,#client,#address_client,#total,#discount,#payment,#rest {
 	border: none;
 	border-bottom: 2px solid #E5E4E2;
 

@@ -15,6 +15,8 @@ class SalesInvoice():
         file = invoiceNumber+"_"+client+".pdf"
         my_canvas = canvas.Canvas(file, pagesize=A4)
         mystyle = ParagraphStyle('my style',fontName='Helvetica',fontSize=10,leading=15)
+
+        # Company Information
         my_canvas.setLineWidth(.5)
         my_canvas.setFont('Helvetica-Bold', 18)
         my_canvas.drawString(24, 817, company)
@@ -22,12 +24,18 @@ class SalesInvoice():
         my_canvas.drawString(24, 800, companyAddress)
         my_canvas.drawString(24, 783, phone)
         my_canvas.drawString(24, 766, email)
-        my_canvas.drawImage(logo, 460, 760, width=60, height=60)
+
+        # Logo Image
+        my_canvas.drawImage("LOGOOFICINA.PNG", 460, 760, width=60, height=60)
         my_canvas.setFont('Helvetica-Bold', 15)
+
+        # Invoice Title
         my_canvas.drawCentredString(297.5, 735, 'ORÇAMENTO')
         my_canvas.setFont('Helvetica', 10)
         my_canvas.line(24, 740, 230, 740)
         my_canvas.line(360, 740, 571, 740)
+
+        # Client Information
         my_canvas.drawString(24, 720, 'Cliente :')
         my_canvas.drawString(75, 720, client)
         my_canvas.drawString(473, 720, 'N° Orcamento :')
@@ -44,6 +52,7 @@ class SalesInvoice():
 
         my_canvas.line(24, 670, 571, 670)
 
+        # Table Header
         my_canvas.setFont('Helvetica-Bold', 9)
 
         my_canvas.drawCentredString(49 , 657, 'N°Produto')
@@ -56,6 +65,7 @@ class SalesInvoice():
         my_canvas.line(24, 650, 571, 650)
         my_canvas.setFont('Helvetica', 9)
 
+        # Table Content
         line_y = 650
 
         row = table.rowCount()
@@ -99,6 +109,7 @@ class SalesInvoice():
             my_canvas.showPage()
             my_canvas.setFont('Helvetica', 9)
 
+        # Totals
         my_canvas.setFont('Helvetica-Bold', 10)
         my_canvas.drawRightString(500, line_y-20, 'Total :')
         my_canvas.drawRightString(500, line_y-35, 'Desconto :')

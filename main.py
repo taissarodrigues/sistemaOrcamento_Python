@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtGui import QPixmap, QAction, QCursor
+from PySide6.QtGui import QPixmap, QAction, QCursor, QFont
 from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QTableWidgetItem, QMenu
 from invoice_ui import (Ui_MainWindow)
 from datetime import date
@@ -26,30 +26,39 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.today = d_ate.strftime("%d-%m-%Y")
         self.date.setText(self.today)
 
-        self.companyName.textChanged.connect(self.company_label)
-        self.email.textChanged.connect(self.email_label)
-        self.phone.textChanged.connect(self.phone_label)
-        self.companyAddress.textChanged.connect(self.companyAddress_label)
+        # Set fixed values
+        self.companyName.setText("Oficina do Alumínio")
+        self.email.setText("email@example.com")
+        self.phone.setText("(123) 456-7890")
+        self.companyAddress.setText("Endereço Av.I 1733 Conjunto Ceara 3 etapa")
+        # self.companyCNPJ.setText("CNPJ:204445040001-08")
+        # self.companyCNPJLabel.setText(self.companyCNPJ)
+
+        # self.companyName.textChanged.connect(self.company_label)
+        # self.email.textChanged.connect(self.email_label)
+        # self.phone.textChanged.connect(self.phone_label)
+        # self.companyAddress.textChanged.connect(self.companyAddress_label)
 
         self.client.textChanged.connect(self.client_label)
         self.address_client.textChanged.connect(self.addressClient_label)
 
         self.quantity.textChanged.connect(self.quantity_label)
         self.price.textChanged.connect(self.price_label)
-
         self.total.textChanged.connect(self.totalChanged)
         self.discount.textChanged.connect(self.discountChanged)
         self.payment.textChanged.connect(self.paymentChanged)
         self.rest.textChanged.connect(self.restChanged)
 
         self.goInvoice.clicked.connect(self.go_invoice)
-        self.loadLogo.clicked.connect(self.addLogo)
+        # self.loadLogo.clicked.connect(self.addLogo)
         self.addProduct.clicked.connect(self.add_product)
         self.printSaveInvoice.clicked.connect(self.showMenu)
         self.newInvoice.clicked.connect(self.new_nvoice)
         self.addProduct.setFixedWidth(150)  # Define a largura do botão
 
         self.showMaximized()
+
+
 
     def go_invoice(self):
         self.stackedWidget.setCurrentIndex(1)
@@ -155,7 +164,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.client.setStyleSheet(
                 "focus{border-bottom: 2px solid #7B68EE;}")
         else:
-            self.label_14.setText("Client")
+            self.label_14.setText("Cliente")
             self.client.setStyleSheet("border-bottom: 2px solid #7B68EE")
 
     def addressClient_label(self):
@@ -164,7 +173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.address_client.setStyleSheet(
                 "focus{border-bottom: 2px solid #7B68EE;}")
         else:
-            self.label_15.setText("Address")
+            self.label_15.setText("Endereço")
             self.address_client.setStyleSheet(
                 "border-bottom: 2px solid #7B68EE")
 

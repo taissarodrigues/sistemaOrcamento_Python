@@ -3,7 +3,7 @@ from PySide6.QtGui import QFont
 from PySide6.QtWidgets import (QComboBox, QGridLayout, QLabel, QLineEdit,  QPushButton, QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
                                QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
 
-
+# pagina sistema
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -131,6 +131,8 @@ class Ui_MainWindow(object):
         self.companyAddress.setMaximumSize(QSize(250, 100))
         self.companyAddress.setFont(font1)
 
+
+
         self.gridLayout_8.addWidget(self.companyAddress, 8, 0, 1, 3)
 
         self.verticalSpacer = QSpacerItem(
@@ -138,16 +140,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_8.addItem(self.verticalSpacer, 9, 1, 1, 1)
 
-        self.loadLogo = QPushButton(self.widget)
-        self.loadLogo.setObjectName(u"loadLogo")
-        self.loadLogo.setMinimumSize(QSize(250, 35))
-        self.loadLogo.setMaximumSize(QSize(250, 35))
+        # self.loadLogo = QPushButton(self.widget)
+        # self.loadLogo.setObjectName(u"loadLogo")
+        # self.loadLogo.setMinimumSize(QSize(250, 35))
+        # self.loadLogo.setMaximumSize(QSize(250, 35))
         font2 = QFont()
         font2.setFamilies([u"Calibri"])
         font2.setPointSize(14)
-        self.loadLogo.setFont(font2)
+        # self.loadLogo.setFont(font2)
 
-        self.gridLayout_8.addWidget(self.loadLogo, 10, 0, 1, 3)
+        # self.gridLayout_8.addWidget(self.loadLogo, 10, 0, 1, 3)
 
         self.verticalSpacer_2 = QSpacerItem(
             20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
@@ -528,7 +530,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate(
-            "MainWindow", u"Janela Principal", None))
+            "MainWindow", u"Sistema Orçamento", None))
         self.logo.setText(QCoreApplication.translate(
             "MainWindow", u"LOGOTIPO", None))
         self.label.setText("")
@@ -553,10 +555,10 @@ class Ui_MainWindow(object):
                                                                None))
         self.companyAddress.setPlaceholderText(
             QCoreApplication.translate("MainWindow", u"Endereço da Empresa", None))
-        self.loadLogo.setText(QCoreApplication.translate(
-            "MainWindow", u"Carregar Logotipo", None))
+        # self.loadLogo.setText(QCoreApplication.translate(
+        #     "MainWindow", u"Carregar Logotipo", None))
         self.goInvoice.setText(QCoreApplication.translate(
-            "MainWindow", u"Ir para Fatura", None))
+            "MainWindow", u"Ir para Orçamento", None))
         ___qtablewidgetitem = self.table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate(
             "MainWindow", u"Nº Produto", None))
@@ -573,7 +575,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem4.setText(
             QCoreApplication.translate("MainWindow", u"Valor", None))
         self.label_6.setText(QCoreApplication.translate(
-            "MainWindow", u"Nº da Fatura:", None))
+            "MainWindow", u"Nº Orçamento:", None))
         self.n_invoice.setText("")
         self.label_8.setText(QCoreApplication.translate(
             "MainWindow", u"Data:", None))
@@ -596,7 +598,7 @@ class Ui_MainWindow(object):
             "MainWindow", u"Restante:", None))
         self.label_17.setText("")
         self.printSaveInvoice.setText(QCoreApplication.translate(
-            "MainWindow", u"Imprimir / Salvar Fatura", None))
+            "MainWindow", u"Imprimir / Salvar", None))
         self.newInvoice.setText(QCoreApplication.translate(
             "MainWindow", u"Nova Fatura", None))
         self.label_16.setText("")

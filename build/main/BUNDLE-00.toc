@@ -1,0 +1,3 @@
+([('main',
+   '/Users/taissavitoria/PycharmProjects/pythonOrcamento/dist/main',
+   'EXECUTABLE')],)

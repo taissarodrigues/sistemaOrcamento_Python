@@ -7,7 +7,7 @@ from PySide6.QtGui import QFont
 from PySide6.QtPdfWidgets import QPdfView
 from PySide6.QtWidgets import QGridLayout, QMainWindow, QPushButton, QSizePolicy, QSpacerItem, QWidget
 
-
+# Pagina de vizualizar o PDF
 class PdfViewer(QMainWindow):
     def __init__(self, file):
         super().__init__()
@@ -15,7 +15,6 @@ class PdfViewer(QMainWindow):
         self.fileName = file
 
         self.m_document = QPdfDocument()
-
         self.setObjectName(u"qsdlfjlmsjf")
         self.resize(902, 431)
 
@@ -81,6 +80,6 @@ class PdfViewer(QMainWindow):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.print_btn.setText(QCoreApplication.translate("MainWindow", u"Print", None))
-        self.cancel_btn.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.print_btn.setText(QCoreApplication.translate("MainWindow", u"Imprimir", None))
+        self.cancel_btn.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
 
